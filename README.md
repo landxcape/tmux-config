@@ -39,6 +39,7 @@ The prefix key is **`Ctrl-b`**.
 - `prefix + -` - Split pane vertically (current path).
 - `prefix + Tab` - Toggle between last two windows.
 - `prefix + o` - Fuzzy-finder popup switcher for sessions/windows (`fzf`).
+- `prefix + g` - Floating modal popup for `lazygit`.
 - `prefix + s` - Session tree viewer.
 - `prefix + S` - Toggle pane synchronization.
 - `prefix + z` - Zoom/Unzoom current pane.
@@ -62,6 +63,7 @@ The prefix key is **`Ctrl-b`**.
 ### Copy Mode (Vi)
 - `prefix + [` - Enter copy mode.
 - `v` - Begin selection.
+- `C-v` - Toggle block / rectangular selection.
 - `y` / `Enter` - Copy selection to system clipboard (`pbcopy`) and cancel.
 
 ### Session Persistence
@@ -71,6 +73,7 @@ The prefix key is **`Ctrl-b`**.
 ## 🛠️ Requirements
 - **tmux** 3.2+ (for full feature support).
 - **fzf** (for `prefix + o` popup switcher).
+- **lazygit** (for `prefix + g` floating popup).
 - **gitmux** (for status bar git information).
 - A terminal with **True Color** support (e.g., Alacritty, Kitty, WezTerm, Ghostty, iTerm2).
 - A Nerd Font for icon support (optional but recommended).
