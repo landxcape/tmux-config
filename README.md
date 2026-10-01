@@ -4,9 +4,9 @@ A professional, modern `tmux` configuration featuring the **Ayu Dark** theme, se
 
 ## ✨ Features
 
-- **🎨 Theme:** Ayu Dark variant (via `Saecki/tmux-ayu`) with a clean, centered status bar.
+- **🎨 Theme:** Ayu Dark variant with a clean, centered status bar and `gitmux` status indicator.
 - **💾 Persistence:** Automatic session saving every 15 minutes and manual restore (via `tmux-resurrect` & `tmux-continuum`).
-- **⌨️ Navigation:** Seamless Vim-style pane navigation and resizing.
+- **⌨️ Navigation:** Seamless Vim-style pane navigation and resizing (`vim-tmux-navigator`).
 - **🚀 Portability:** Automatic installation of TPM (Tmux Plugin Manager) on first run.
 - **🖼️ Modern Support:** True Color (24-bit RGB) and image passthrough (for Yazi/Neovim) enabled.
 - **📂 XDG Compliant:** Located in `~/.config/tmux/`.
@@ -35,13 +35,23 @@ The prefix key is **`Ctrl-b`**.
 ### General
 - `prefix + r` - Reload configuration.
 - `prefix + c` - New window in current path.
-- `prefix + |` - Split pane horizontally.
-- `prefix + -` - Split pane vertically.
-- `prefix + L` - Toggle between last two windows.
+- `prefix + |` - Split pane horizontally (current path).
+- `prefix + -` - Split pane vertically (current path).
+- `prefix + Tab` - Toggle between last two windows.
+- `prefix + o` - Fuzzy-finder popup switcher for sessions/windows (`fzf`).
+- `prefix + s` - Session tree viewer.
+- `prefix + S` - Toggle pane synchronization.
 - `prefix + z` - Zoom/Unzoom current pane.
+- `prefix + b` - Break current pane into a background window.
+- `prefix + j` - Join pane from another window.
+- `prefix + x` - Kill current pane without confirmation.
+- `prefix + X` - Kill current window without confirmation.
+- `prefix + Q` - Kill session (prompts for confirmation).
 
-### Pane Navigation (Vim-style)
-- `Alt + h/j/k/l` - Direct pane switching (no prefix needed, works with `vim-tmux-navigator`).
+### Navigation
+- `Ctrl + h/j/k/l` - Direct pane switching (works seamlessly with Neovim via `vim-tmux-navigator`).
+- `Alt + Arrow Keys` - Direct pane switching without prefix.
+- `Shift + Left/Right` - Switch to previous/next window.
 
 ### Pane Resizing
 - `prefix + H` - Resize left (5 cells).
@@ -49,13 +59,20 @@ The prefix key is **`Ctrl-b`**.
 - `prefix + K` - Resize up (5 cells).
 - `prefix + L` - Resize right (5 cells).
 
+### Copy Mode (Vi)
+- `prefix + [` - Enter copy mode.
+- `v` - Begin selection.
+- `y` / `Enter` - Copy selection to system clipboard (`pbcopy`) and cancel.
+
 ### Session Persistence
 - `prefix + Ctrl-s` - Manual save.
 - `prefix + Ctrl-r` - Manual restore.
 
 ## 🛠️ Requirements
 - **tmux** 3.2+ (for full feature support).
-- A terminal with **True Color** support (e.g., Alacritty, Kitty, WezTerm, iTerm2).
+- **fzf** (for `prefix + o` popup switcher).
+- **gitmux** (for status bar git information).
+- A terminal with **True Color** support (e.g., Alacritty, Kitty, WezTerm, Ghostty, iTerm2).
 - A Nerd Font for icon support (optional but recommended).
 
 ---
